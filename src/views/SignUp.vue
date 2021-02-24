@@ -32,7 +32,7 @@ export default {
   methods: {
     auth() {
       axios
-        .post("https://wizardly-kilby-c714eb.netlify.app/api/register", {
+        .post("herokuのURL/api/register", {
           name: this.name,
           profile: this.profile,
           email: this.email,

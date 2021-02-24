@@ -53,7 +53,7 @@ export default {
           if (element.user_id == this.$store.state.user.id) {
             axios({
               method: "delete",
-              url: "https://wizardly-kilby-c714eb.netlify.app/api/like",
+              url: "herokuのURL/api/like",
               data: {
                 share_id: this.shares[index].item.id,
                 user_id: this.$store.state.user.id,
@@ -69,7 +69,7 @@ export default {
         });
       } else {
         axios
-          .post("https://wizardly-kilby-c714eb.netlify.app/api/like", {
+          .post("herokuのURL/api/like", {
             share_id: this.shares[index].item.id,
             user_id: this.$store.state.user.id,
           })
@@ -85,7 +85,7 @@ export default {
     del(index) {
       axios
         .delete(
-          "https://wizardly-kilby-c714eb.netlify.app/api/shares/" +
+          "herokuのURL/api/shares/" +
             this.shares[index].item.id
         )
         .then((response) => {
@@ -99,12 +99,12 @@ export default {
     async getShares() {
       let data = [];
       const shares = await axios.get(
-        "https://wizardly-kilby-c714eb.netlify.app/api/shares"
+        "herokuのURL/api/shares"
       );
       for (let i = 0; i < shares.data.data.length; i++) {
         await axios
           .get(
-            "https://wizardly-kilby-c714eb.netlify.app/api/shares/" +
+            "herokuのURL/api/shares/" +
               shares.data.data[i].id
           )
           .then((response) => {

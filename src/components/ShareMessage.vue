@@ -22,7 +22,7 @@ export default {
         alert("シェアする内容を入力してください");
       } else {
         axios
-          .post("https://wizardly-kilby-c714eb.netlify.app/api/shares", {
+          .post("herokuのURL/api/shares", {
             user_id: this.$store.state.user.id,
             share: this.share,
           })

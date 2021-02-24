@@ -44,7 +44,7 @@ export default {
   methods: {
     send() {
       axios
-        .post("https://wizardly-kilby-c714eb.netlify.app/api/comment", {
+        .post("herokuのURL/api/comment", {
           share_id: this.id,
           user_id: this.$store.state.user.id,
           content: this.content,
@@ -60,7 +60,7 @@ export default {
     },
     comment() {
       axios
-        .get("https://wizardly-kilby-c714eb.netlify.app/api/shares/" + this.id)
+        .get("herokuのURL/api/shares/" + this.id)
         .then((response) => {
           this.data = response.data.comment;
         });
