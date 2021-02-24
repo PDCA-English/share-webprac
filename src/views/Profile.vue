@@ -38,7 +38,7 @@ export default {
     edit() {
       if (!this.active) {
         axios
-          .put("herokuのURL/api/user", {
+          .put("https://wizardly-kilby-c714eb.netlify.app/api/user", {
             email: this.$store.state.user.email,
             profile: this.profile,
           })
