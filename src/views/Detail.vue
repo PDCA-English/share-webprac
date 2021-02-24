@@ -60,7 +60,7 @@ export default {
     },
     comment() {
       axios
-        .get("herokuのURL/api/shares/" + this.id)
+        .get("https://arcane-thicket-29150.herokuapp.com/api/shares/" + this.id)
         .then((response) => {
           this.data = response.data.comment;
         });
